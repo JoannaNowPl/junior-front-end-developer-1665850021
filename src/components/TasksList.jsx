@@ -9,31 +9,29 @@ export function TasksList() {
     {
       title: "Application Setup",
       taskStatus: "done",
-      context: [],
+      contexts: [],
     },
     {
       title: "Static Books List",
       taskStatus: "done",
-      context: [],
+      contexts: [],
     },
     {
       title: "Administration Panel",
       taskStatus: "done",
-      context: [],
+      contexts: [],
     },
     {
       title: "Connect Admin with Frontend",
       taskStatus: "active",
-      context: [],
+      contexts: [],
     },
     {
       title: "Book Review Feature",
       taskStatus: "blocked",
-      context: [],
+      contexts: [],
     },
   ];
-
-
 
   return (
     <div className="tasks-list">
@@ -49,11 +47,11 @@ export function TasksList() {
               </li>;
             } else if (el.taskStatus === "active") {
               return <li className="tasks-list__task ">
-                <div  className="tasks-list__icon tasks-list__icon--active"><img src={arrowWhite} alt="active"/></div> <h3 className="tasks-list__task-title">{el.title}</h3>
+                <div  className="tasks-list__icon tasks-list__icon--active"><img src={arrowWhite} alt="active"/></div> <h3 className="tasks-list__task-title tasks-list__task-title--active">{el.title}</h3>
               </li>;
             } else if (el.taskStatus === "blocked") {
               return <li className="tasks-list__task">
-                <div  className="tasks-list__icon tasks-list__icon--bocked"><img src={lock} alt="blocked" width="80%" height="80%"/></div>  <h3 className="tasks-list__task-title">{el.title}</h3>
+                <div  className="tasks-list__icon tasks-list__icon--blocked"><img src={lock} alt="blocked" width="80%" height="80%"/></div>  <h3 className="tasks-list__task-title tasks-list__task-title--blocked">{el.title}</h3>
               </li>;
             } else
               return (
