@@ -1,3 +1,9 @@
+import "./TasksList.css";
+import arrowGreen from "../utils/Arrow-green.svg";
+import arrowWhite from "../utils/Arrow-white.svg";
+import lock from "../utils/lock.webp";
+
+
 export function TasksList() {
   const tasks = [
     {
@@ -27,31 +33,32 @@ export function TasksList() {
     },
   ];
 
+
+
   return (
     <div className="tasks-list">
-      <header>
-        <h2>YOUR TASKS</h2>
+      <header className="tasks-list__header-box">
+        <h2 className="tasks-list__header">YOUR TASKS</h2>
       </header>
-      <nav>
-        <ul>
+      <nav className="tasks-list__list-box">
+        <ul className="tasks-list__list">
           {tasks.map((el) => {
             if (el.taskStatus === "done") {
-              return <li>
-                {" "}
-                <span>"green"</span> <h3>{el.title}</h3>
+              return <li className="tasks-list__task">
+                <div className="tasks-list__icon tasks-list__icon--done "><img src={arrowGreen} alt="done"/></div> <h3 className="tasks-list__task-title">{el.title}</h3>
               </li>;
             } else if (el.taskStatus === "active") {
-              return <li>
-                <span>"blue"</span> <h3>{el.title}</h3>
+              return <li className="tasks-list__task ">
+                <div  className="tasks-list__icon tasks-list__icon--active"><img src={arrowWhite} alt="active"/></div> <h3 className="tasks-list__task-title">{el.title}</h3>
               </li>;
             } else if (el.taskStatus === "blocked") {
-              return <li>
-                <span>"grey"</span> <h3>{el.title}</h3>
+              return <li className="tasks-list__task">
+                <div  className="tasks-list__icon tasks-list__icon--bocked"><img src={lock} alt="blocked" width="80%" height="80%"/></div>  <h3 className="tasks-list__task-title">{el.title}</h3>
               </li>;
             } else
               return (
-                <li>
-                  <span></span> <h3>{el.title}</h3>
+                <li className="tasks-list__task">
+                  <div  className="tasks-list__icon"></div> <h3 className="tasks-list__task-title">{el.title}</h3>
                 </li>
               );
           })}
