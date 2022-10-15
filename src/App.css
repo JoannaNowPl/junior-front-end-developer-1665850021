@@ -5,3 +5,8 @@
   font-family:"Poppins", sans-serif;
   font-size: 10px;
 }
+
+.main-content{
+  display: flex;
+  flex-direction: row;
+}
