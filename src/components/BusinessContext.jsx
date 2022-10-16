@@ -40,7 +40,7 @@ export function BusinessContext() {
                   <div>New</div>
                   <div>{`${el.author} . ${el.created_at}`}</div>
                   <h3>{el.title}</h3>
-                  <div>{`${el.content.substring(0, 100)}...`}</div>
+                  <p>{`${el.content.substring(0, 100)}...`}</p>
                 </li>
               )
               else if (el.context_status === "active")
@@ -48,7 +48,7 @@ export function BusinessContext() {
                 <li>
                   <div>{`${el.author} . ${el.created_at}`}</div>
                   <h3>{el.title}</h3>
-                  <div>{`${el.content.substring(0, 100)}...`}</div>
+                  <p>{`${el.content.substring(0, 100)}...`}</p>
                 </li>
               )
               else if (el.context_status === "read")
@@ -56,13 +56,28 @@ export function BusinessContext() {
                 <li>
                   <div>{`${el.author} . ${el.created_at}`}</div>
                   <h3>{el.title}</h3>
-                  <div>{`${el.content.substring(0, 100)}...`}</div>
+                  <p>{`${el.content.substring(0, 100)}...`}</p>
                 </li>
               )
               else return <></>
           })}
         </ul>
       </nav>
+      {BusinessContexts.map(el => {
+        if (el.context_status === "active")
+      return (<article>
+        <header>
+          <h2>{el.title}</h2>
+        </header>
+        <section>
+          <header>
+            <h3>{el.author}</h3>
+            <div>{`${el.created_at}`}</div>
+          </header>
+          <p>{el.content}</p>
+        </section>
+      </article>)
+      else return (<article></article>)})}
     </div>
   );
 }
