@@ -1,3 +1,6 @@
+import "./BusinessContext.css";
+import circleIcon from "../utils/Circle.svg"
+
 export function BusinessContext() {
   const BusinessContexts = [
     {
@@ -63,14 +66,16 @@ export function BusinessContext() {
   }
   return (
     <div className="business-context">
-      <header>
-        <div>icon</div>
-        <h3>BUSINESS CONTEXT</h3>
+      <header className="business-context__header">
+        <div className="business-context__header-box">
+        <div  className="business-context__header-icon"><img src={circleIcon} alt="Business context icon"/></div>
+        <h3 className="business-context__header-name">BUSINESS CONTEXT</h3>
+        </div>       
       </header>
+      <main>
       <nav>
         <ul>
           {BusinessContexts.map((el) => {
-            
             if (el.context_status === "new")
               return (
                 <li>
@@ -151,6 +156,7 @@ export function BusinessContext() {
           );
         else return <article></article>;
       })}
+      </main>
     </div>
   );
 }

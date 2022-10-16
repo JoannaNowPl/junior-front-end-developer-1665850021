@@ -4,6 +4,9 @@
   padding: 0;
   font-family:"Poppins", sans-serif;
   font-size: 10px;
+  --primary-color: #0165FF;
+  --secondary-color: #6B778C;
+
 }
 
 .main-content{
