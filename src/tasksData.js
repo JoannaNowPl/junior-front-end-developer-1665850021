@@ -17,12 +17,12 @@ export const tasks = [
       },
       {
         id: nanoid(),
-        title: "Title 2 Active context",
+        title: "Title 2 read context",
         content:
           "Hello! Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
         author: "Kirsten Palmer",
         created_at: new Date(2022, 9, 12),
-        context_status: "active",
+        context_status: "read",
       },
       {
         id: nanoid(),
@@ -51,12 +51,12 @@ export const tasks = [
       },
       {
         id: nanoid(),
-        title: "Title 5 Active context",
+        title: "Title 5 read context",
         content:
           "Hello! Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
         author: "Kirsten Palmer",
         created_at: new Date(2022, 9, 12),
-        context_status: "active",
+        context_status: "read",
       },
       {
         id: nanoid(),
@@ -85,12 +85,12 @@ export const tasks = [
       },
       {
         id: nanoid(),
-        title: "Title 8 Active context",
+        title: "Title 8 read context",
         content:
           "Hello! Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
         author: "Kirsten Palmer",
         created_at: new Date(2022, 9, 12),
-        context_status: "active",
+        context_status: "read",
       },
       {
         id: nanoid(),
@@ -119,12 +119,12 @@ export const tasks = [
       },
       {
         id: nanoid(),
-        title: "Title 11 Active context",
+        title: "Title 11 read context",
         content:
           "Hello! Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
         author: "Kirsten Palmer",
         created_at: new Date(2022, 9, 12),
-        context_status: "active",
+        context_status: "read",
       },
       {
         id: nanoid(),
@@ -153,12 +153,12 @@ export const tasks = [
       },
       {
         id: nanoid(),
-        title: "Title 14 Active context",
+        title: "Title 14 read context",
         content:
           "Hello! Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
         author: "Kirsten Palmer",
         created_at: new Date(2022, 9, 12),
-        context_status: "active",
+        context_status: "read",
       },
       {
         id: nanoid(),

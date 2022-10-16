@@ -7,8 +7,8 @@ import { TasksList } from "./TasksList";
 export function BusinessContext(props) {
 
   const params = useParams();
-  const id = params.id;
-  const index = props.tasks.findIndex(el=> el.id===id);
+  const taskId = params.id;
+  const index = props.tasks.findIndex(el=> el.id===taskId);
   const BusinessContexts = props.tasks[index].contexts;
   
 
@@ -91,7 +91,7 @@ export function BusinessContext(props) {
             {BusinessContexts.map((el) => {
               if (el.context_status === "new")
                 return (
-                  <li className="business-context__list-item  business-context__list-item--new" key={el.id}>
+                  <li className="business-context__list-item  business-context__list-item--new" key={el.id} onClick={()=> props.clickOnNew(el.id)}>
                     <div className="business-context__list-item-info-box">
                       <div className="business-context__list-item-new">NEW</div>
                       <ul className="business-context__list-item-info">
