@@ -1,5 +1,5 @@
 import "./BusinessContext.css";
-import circleIcon from "../utils/Circle.svg"
+import circleIcon from "../utils/Circle.svg";
 
 export function BusinessContext() {
   const BusinessContexts = [
@@ -59,103 +59,106 @@ export function BusinessContext() {
   };
 
   const renderDayEndText = (day) => {
-    if (day === "1" || day === "21" || day === "31") return <span>st</span>
-    else if (day === "2" || day === "22") return <span>nd</span>
-    else if (day === "3" || day === "23") return <span>rd</span>
-    else return <span>th</span>
-  }
+    if (day === "1" || day === "21" || day === "31") return <span>st</span>;
+    else if (day === "2" || day === "22") return <span>nd</span>;
+    else if (day === "3" || day === "23") return <span>rd</span>;
+    else return <span>th</span>;
+  };
   return (
     <div className="business-context">
       <header className="business-context__header">
         <div className="business-context__header-box">
-        <div  className="business-context__header-icon"><img src={circleIcon} alt="Business context icon"/></div>
-        <h3 className="business-context__header-name">BUSINESS CONTEXT</h3>
-        </div>       
+          <div className="business-context__header-icon">
+            <img src={circleIcon} alt="Business context icon" />
+          </div>
+          <h3 className="business-context__header-name">BUSINESS CONTEXT</h3>
+        </div>
       </header>
       <main>
-      <nav>
-        <ul>
-          {BusinessContexts.map((el) => {
-            if (el.context_status === "new")
-              return (
-                <li>
-                  <div>
-                    <div>New</div>
-                    <span>{el.author}</span>
-                    <span>.</span>
-                    <span>{`${renderMonth(el.created_at)} ${renderDayOfMonth(
-                      el.created_at
-                    )}`}</span>
-                  </div>
+        <nav>
+          <ul className="business-context__list">
+            {BusinessContexts.map((el) => {
+              if (el.context_status === "new")
+                return (
+                  <li className="business-context__list-item  business-context__list-item--new">
+                    <div className="business-context__list-item-info-box">
+                      <div className="business-context__list-item-new">NEW</div>
+                      <ul className="business-context__list-item-info">
+                        <li className="business-context__list-item-author">{el.author}</li>
+                        <li className="business-context__list-item-date">{`${renderMonth(el.created_at)} ${renderDayOfMonth(
+                          el.created_at
+                        )}`}</li>
+                      </ul>
+                    </div>
 
-                  <h3>{el.title}</h3>
-                  <p>{`${el.content.substring(0, 100)}...`}</p>
-                </li>
-              );
-            else if (el.context_status === "active")
-              return (
-                <li>
-                  <div>
-                  <span>{el.author}</span>
-                    <span>.</span>
-                    <span>{`${renderMonth(el.created_at)} ${renderDayOfMonth(
-                      el.created_at
-                    )}`}</span>
-                  </div>
+                    <h3>{el.title}</h3>
+                    <p>{`${el.content.substring(0, 95)}...`}</p>
+                  </li>
+                );
+              else if (el.context_status === "active")
+                return (
+                  <li className="business-context__list-item">
+                    <div className="business-context__list-item-info-box">
+                    <ul className="business-context__list-item-info">
+                        <li className="business-context__list-item-author">{el.author}</li>
+                        <li className="business-context__list-item-date">{`${renderMonth(el.created_at)} ${renderDayOfMonth(
+                          el.created_at
+                        )}`}</li>
+                      </ul>
+                    </div>
 
-                  <h3>{el.title}</h3>
-                  <p>{`${el.content.substring(0, 100)}...`}</p>
-                </li>
-              );
-            else if (el.context_status === "read")
-              return (
-                <li>
-                  <div>
-                    <span>{el.author}</span>
-                    <span>.</span>
-                    <span>{`${renderMonth(el.created_at)} ${renderDayOfMonth(
-                      el.created_at
-                    )}`}</span>
-                  </div>
-                  <h3>{el.title}</h3>
-                  <p>{`${el.content.substring(0, 100)}...`}</p>
-                </li>
-              );
-            else return <></>;
-          })}
-        </ul>
-      </nav>
-      {BusinessContexts.map((el) => {
-        let totalDays = calculateDays(currentDate, el.created_at);
-        if (el.context_status === "active")
-          return (
-            <article>
-              <header>
-                <h2>{el.title}</h2>
-              </header>
-              <section>
+                    <h3>{el.title}</h3>
+                    <p>{`${el.content.substring(0, 100)}...`}</p>
+                  </li>
+                );
+              else if (el.context_status === "read")
+                return (
+                  <li className="business-context__list-item">
+                   <div className="business-context__list-item-info-box">
+                   <ul className="business-context__list-item-info">
+                        <li className="business-context__list-item-author">{el.author}</li>
+                        <li className="business-context__list-item-date">{`${renderMonth(el.created_at)} ${renderDayOfMonth(
+                          el.created_at
+                        )}`}</li>
+                      </ul>
+                    </div>
+                    <h3>{el.title}</h3>
+                    <p>{`${el.content.substring(0, 100)}...`}</p>
+                  </li>
+                );
+              else return <></>;
+            })}
+          </ul>
+        </nav>
+        {BusinessContexts.map((el) => {
+          let totalDays = calculateDays(currentDate, el.created_at);
+          if (el.context_status === "active")
+            return (
+              <article>
                 <header>
-                  <h3>{el.author}</h3>
-                  {totalDays > 0 ? <p>{totalDays}</p> : <p></p>}
-                  {renderDaysSpan(totalDays)}
-                  <div>
-                    <span>
-                    {renderDayOfMonth(el.created_at)}
-                    {renderDayEndText(renderDayOfMonth(el.created_at))}
-                    {` ${renderMonth(el.created_at)} `}
-                    </span>
-                    <span>.</span>
-                    <span>
-                    {renderTime(el.created_at)}
-                    </span>
-                  </div>
+                  <h2>{el.title}</h2>
                 </header>
-                <p>{el.content}</p>
-              </section>
-            </article>
-          );
-        else return <article></article>;
-      })}
+                <section>
+                  <header>
+                    <h3>{el.author}</h3>
+                    {totalDays > 0 ? <p>{totalDays}</p> : <p></p>}
+                    {renderDaysSpan(totalDays)}
+                    <div>
+                      <span>
+                        {renderDayOfMonth(el.created_at)}
+                        {renderDayEndText(renderDayOfMonth(el.created_at))}
+                        {` ${renderMonth(el.created_at)} `}
+                      </span>
+                      <span>.</span>
+                      <span>{renderTime(el.created_at)}</span>
+                    </div>
+                  </header>
+                  <p>{el.content}</p>
+                </section>
+              </article>
+            );
+          else return <article></article>;
+        })}
       </main>
     </div>
   );
