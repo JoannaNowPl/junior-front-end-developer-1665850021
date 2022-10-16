@@ -91,13 +91,13 @@ export function BusinessContext() {
                       </ul>
                     </div>
 
-                    <h3>{el.title}</h3>
-                    <p>{`${el.content.substring(0, 95)}...`}</p>
+                    <h3 className="business-context__list-item-title business-context__list-item-title--new">{el.title}</h3>
+                    <p className="business-context__list-item-abstract">{`${el.content.substring(0, 95)}...`}</p>
                   </li>
                 );
               else if (el.context_status === "active")
                 return (
-                  <li className="business-context__list-item">
+                  <li className="business-context__list-item business-context__list-item--active">
                     <div className="business-context__list-item-info-box">
                     <ul className="business-context__list-item-info">
                         <li className="business-context__list-item-author">{el.author}</li>
@@ -107,8 +107,8 @@ export function BusinessContext() {
                       </ul>
                     </div>
 
-                    <h3>{el.title}</h3>
-                    <p>{`${el.content.substring(0, 100)}...`}</p>
+                    <h3 className="business-context__list-item-title">{el.title}</h3>
+                    <p className="business-context__list-item-abstract">{`${el.content.substring(0, 100)}...`}</p>
                   </li>
                 );
               else if (el.context_status === "read")
@@ -122,8 +122,8 @@ export function BusinessContext() {
                         )}`}</li>
                       </ul>
                     </div>
-                    <h3>{el.title}</h3>
-                    <p>{`${el.content.substring(0, 100)}...`}</p>
+                    <h3 className="business-context__list-item-title">{el.title}</h3>
+                    <p className="business-context__list-item-abstract">{`${el.content.substring(0, 100)}...`}</p>
                   </li>
                 );
               else return <></>;
