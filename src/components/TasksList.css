@@ -40,6 +40,13 @@
   justify-content: flex-start;
   margin-bottom: 15.44px;
 }
+.tasks-list__link{
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
 
 .tasks-list__task-title {
   font-weight: 500;

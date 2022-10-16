@@ -1,34 +1,16 @@
 import "./BusinessContext.css";
 import circleIcon from "../utils/Circle.svg";
 import authorImg from "../utils/userImg.svg";
+import { useParams } from "react-router-dom";
+import { TasksList } from "./TasksList";
 
-export function BusinessContext() {
-  const BusinessContexts = [
-    {
-      title: "Title 1 New context",
-      content:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      author: "Mary Smith",
-      created_at: new Date(2022, 9, 17),
-      context_status: "new",
-    },
-    {
-      title: "Title 2 Active context",
-      content:
-        "Hello! Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
-      author: "Kirsten Palmer",
-      created_at: new Date(2022, 9, 12),
-      context_status: "active",
-    },
-    {
-      title: "Title 3 Read context",
-      content:
-        "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from de Finibus Bonorum et Malorum by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
-      author: "Jessica Bem",
-      created_at: new Date(2022, 9, 10),
-      context_status: "read",
-    },
-  ];
+export function BusinessContext(props) {
+
+  const params = useParams();
+  const id = params.id;
+  const index = props.tasks.findIndex(el=> el.id===id);
+  const BusinessContexts = props.tasks[index].contexts;
+  
 
   let currentDate = new Date();
 
@@ -92,7 +74,8 @@ export function BusinessContext() {
         <span className="business-context__article-date-el">th &nbsp;</span>
       );
   };
-  return (
+  return (<>
+  <TasksList tasks={props.tasks}/>
     <div className="business-context">
       <header className="business-context__header">
         <div className="business-context__header-box">
@@ -108,7 +91,7 @@ export function BusinessContext() {
             {BusinessContexts.map((el) => {
               if (el.context_status === "new")
                 return (
-                  <li className="business-context__list-item  business-context__list-item--new">
+                  <li className="business-context__list-item  business-context__list-item--new" key={el.id}>
                     <div className="business-context__list-item-info-box">
                       <div className="business-context__list-item-new">NEW</div>
                       <ul className="business-context__list-item-info">
@@ -132,7 +115,7 @@ export function BusinessContext() {
                 );
               else if (el.context_status === "active")
                 return (
-                  <li className="business-context__list-item business-context__list-item--active">
+                  <li className="business-context__list-item business-context__list-item--active" key={el.id}>
                     <div className="business-context__list-item-info-box">
                       <ul className="business-context__list-item-info">
                         <li className="business-context__list-item-author">
@@ -155,7 +138,7 @@ export function BusinessContext() {
                 );
               else if (el.context_status === "read")
                 return (
-                  <li className="business-context__list-item">
+                  <li className="business-context__list-item" key={el.id}>
                     <div className="business-context__list-item-info-box">
                       <ul className="business-context__list-item-info">
                         <li className="business-context__list-item-author">
@@ -229,5 +212,6 @@ export function BusinessContext() {
         })}
       </main>
     </div>
+    </>
   );
 }
