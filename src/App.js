@@ -8,19 +8,21 @@ import { useState } from "react";
 function App() {
   const [tasksState, setTasksState] = useState(tasks);
 
-  const handleClickOnNewContext = (contextId) => {
+  const handleClickOnNewContext = (contextId, taskId) => {
     setTasksState((prevState) =>
       prevState.map((task) => {
-        const newContexs = task.contexts.map((context) => {
-          if (context.id === contextId) {
-            const newEl = { ...context };
-            newEl.context_status = "active";
-            return newEl;
-          } else return context;
-        });
-        const updatedTask = { ...task };
-        updatedTask.contexts = newContexs;
-        return updatedTask;
+        if (task.id === taskId) {
+          const newContexs = task.contexts.map((context) => {
+            if (context.context_status === "active")
+              return { ...context, context_status: "read" };
+            else if (context.id === contextId) {
+              return { ...context, context_status: "active" };
+            } else return context;
+          });
+          const updatedTask = { ...task };
+          updatedTask.contexts = newContexs;
+          return updatedTask;
+        } else return task;
       })
     );
   };
