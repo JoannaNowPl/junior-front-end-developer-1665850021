@@ -1,6 +1,5 @@
 .business-context {
   width: 1040px;
-  min-height: 785px;
   border-radius: 0 0px 12px 12px;
   box-shadow: 0px 1px rgba(0, 0, 0, 0.1);
   margin-top: 80px;
@@ -164,8 +163,7 @@
     padding: 2px;
     border-radius: 25px;
     border: 1px solid rgba(212, 214, 218, 1);
-    width: 48px;
-    height: 48px;
-    object-fit: cover;
-   
+    width: 42px;
+    height: 42px;
+    object-fit: cover;   
 }

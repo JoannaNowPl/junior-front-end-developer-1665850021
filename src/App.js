@@ -4,6 +4,8 @@ import { TasksList } from "./components/TasksList";
 import { Routes, Route } from "react-router-dom";
 import { tasks } from "./tasksData.js";
 import { useState } from "react";
+import {Logo} from "./components/Logo.js";
+import userImg from "./utils/userImg.svg";
 
 function App() {
   const [tasksState, setTasksState] = useState(tasks);
@@ -29,8 +31,13 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header"></header>
-      <main className="main-content">
+      <header className="App__header">
+       <div>{Logo}</div>
+       <div>
+        <img src={userImg} alt="User avatar" className="App__avatar"/>
+       </div>
+      </header>
+      <main className="App__main-content">
         <Routes>
           <Route path="/" element={<TasksList tasks={tasksState} />} />
           <Route
@@ -45,7 +52,31 @@ function App() {
           />
         </Routes>
       </main>
-      <footer></footer>
+      <footer className="App__footer">
+        <div>
+          <ul className="App__footer-section">
+            <li className="App__footer-item App__footer-item--first">
+              Terms of service
+            </li>
+            <li className="App__footer-item">
+              Privacy policy
+            </li>
+            <li className="App__footer-item">
+              Copyright
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul className="App__footer-section">
+            <li className="App__footer-item App__footer-item--first">
+              nerds.family Vesion 1.2
+            </li>
+            <li className="App__footer-item">
+              Last update 10/09/2022
+            </li>
+          </ul>
+        </div>
+      </footer>
     </div>
   );
 }
