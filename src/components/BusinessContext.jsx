@@ -116,7 +116,7 @@ export function BusinessContext(props) {
                 );
               else if (el.context_status === "active")
                 return (
-                  <li className="business-context__list-item business-context__list-item--active" key={el.id}>
+                  <li className="business-context__list-item business-context__list-item--active" key={el.id} >
                     <div className="business-context__list-item-info-box">
                       <ul className="business-context__list-item-info">
                         <li className="business-context__list-item-author">
@@ -139,7 +139,7 @@ export function BusinessContext(props) {
                 );
               else if (el.context_status === "read")
                 return (
-                  <li className="business-context__list-item" key={el.id}>
+                  <li className="business-context__list-item" key={el.id} onClick={()=> props.clickOnRead(el.id, taskId)}>
                     <div className="business-context__list-item-info-box">
                       <ul className="business-context__list-item-info">
                         <li className="business-context__list-item-author">

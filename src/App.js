@@ -8,7 +8,7 @@ import { useState } from "react";
 function App() {
   const [tasksState, setTasksState] = useState(tasks);
 
-  const handleClickOnNewContext = (contextId, taskId) => {
+  const handleClickOnContext = (contextId, taskId) => {
     setTasksState((prevState) =>
       prevState.map((task) => {
         if (task.id === taskId) {
@@ -25,7 +25,7 @@ function App() {
         } else return task;
       })
     );
-  };
+  }; 
 
   return (
     <div className="App">
@@ -38,7 +38,8 @@ function App() {
             element={
               <BusinessContext
                 tasks={tasksState}
-                clickOnNew={handleClickOnNewContext}
+                clickOnNew={handleClickOnContext}
+                clickOnRead={handleClickOnContext}
               />
             }
           />
