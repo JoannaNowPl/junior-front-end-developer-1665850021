@@ -35,7 +35,7 @@
 .App__avatar{
 padding: 2px;
 border-radius: 25px;
-border: 1px solid rgba(212, 214, 218, 1);
+border: 1px solid rgba(107, 119, 140, 1);
 width: 42px;
 height: 42px;
 object-fit: cover;

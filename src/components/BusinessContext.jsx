@@ -22,14 +22,12 @@ export function BusinessContext(props) {
     if (totalDays > 1)
       return (
         <span className="business-context__article-date-el">
-          {" "}
           &nbsp; days ago, &nbsp;
         </span>
       );
     else if (totalDays === 1)
       return (
         <span className="business-context__article-date-el">
-          {" "}
           &nbsp; day ago, &nbsp;
         </span>
       );
@@ -207,7 +205,6 @@ export function BusinessContext(props) {
                           className="business-context__article-dot"
                           key={nanoid()}>
                           <div className="business-context__article-date">
-                            {" "}
                             {totalDays > 0 ? (
                               <p className="business-context__article-date-el">
                                 {totalDays}
