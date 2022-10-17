@@ -25,7 +25,7 @@ function App() {
         } else return task;
       })
     );
-  }; 
+  };
 
   return (
     <div className="App">
