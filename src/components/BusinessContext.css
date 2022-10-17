@@ -116,7 +116,7 @@
   font-weight: 600;
 }
 .business-context__article {
-  margin-left: 99px;
+  margin-left: 35px;
 }
 .business-context__article-header {
   display: flex;
@@ -154,10 +154,10 @@
     color: var(--secondary-color);
     font-size: 1.2rem;
     line-height: 2.4rem;
+    margin-left: 64px;
 }
 .business-context__article-author-image-box{
-    position:absolute;
-    left:700px;
+   width: 64px;
 }
 .business-context__article-author-image{
     padding: 2px;
@@ -165,5 +165,5 @@
     border: 1px solid rgba(212, 214, 218, 1);
     width: 42px;
     height: 42px;
-    object-fit: cover;   
+    object-fit: cover;
 }
